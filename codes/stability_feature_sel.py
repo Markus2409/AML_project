@@ -5,7 +5,7 @@ from sklearn.pipeline import Pipeline
 from sklearn.metrics import matthews_corrcoef
 from imblearn.ensemble import BalancedRandomForestClassifier
 import numpy as np
-def performance_on_subset(subset_features, x_train, y_train, x_val, y_val, pipeline):
+def performance_on_subset(subset_features, x_train, y_train, x_test, y_test, pipeline):
     """
     Evaluates the performance of a given model restricted to a specific subset of features.
 
@@ -23,14 +23,14 @@ def performance_on_subset(subset_features, x_train, y_train, x_val, y_val, pipel
     #find the col number of a specific feature  
     #take the column of the corrispective feature
     Xtr = x_train[subset_features] 
-    Xva = x_val[subset_features]
+    Xts = x_test[subset_features]
     pipeline.fit(Xtr, y_train)     # train the svm on training data
-    y_pred = pipeline.predict(Xva) # predict on validation data
-    mcc = matthews_corrcoef(y_val, y_pred) # compute MCC 
+    y_pred = pipeline.predict(Xts) # predict on validation data
+    mcc = matthews_corrcoef(y_test, y_pred) # compute MCC 
     return mcc  # mcc on VALIDATION
 
     
-def feat_sel(X_training,y_training,x_validation,y_validation, estimator, rf):
+def feat_sel(X_training,y_training,x_testing,y_testing, estimator, rf):
     """
     Performs a feature selection procedure using a Random Forest (that can be chosen by the user; e.g. Balanced or Classic) for ranking 
     and an estimator (e.g., SVM ,RF, LogisticRegression...) for validation performance.
@@ -70,7 +70,7 @@ def feat_sel(X_training,y_training,x_validation,y_validation, estimator, rf):
     #iterate over possible k-features to evaluate how the performance goes on
     for k in ks:
         subset = gini_df["feature"].head(k).tolist()
-        mcc_k = performance_on_subset(subset, X_training, y_training, x_validation, y_validation, estimator)
+        mcc_k = performance_on_subset(subset, X_training, y_training, x_testing, y_testing, estimator)
         curve.append(mcc_k)
         
     # find the k that maximizes the MCC 
