@@ -25,9 +25,9 @@ def performance_on_subset(subset_features, x_train, y_train, x_test, y_test, pip
     Xtr = x_train[subset_features] 
     Xts = x_test[subset_features]
     pipeline.fit(Xtr, y_train)     # train the svm on training data
-    y_pred = pipeline.predict(Xts) # predict on validation data
+    y_pred = pipeline.predict(Xts) # predict on testing data
     mcc = matthews_corrcoef(y_test, y_pred) # compute MCC 
-    return mcc  # mcc on VALIDATION
+    return mcc  # mcc on testing
 
     
 def feat_sel(X_training,y_training,x_testing,y_testing, estimator, rf):
@@ -40,12 +40,12 @@ def feat_sel(X_training,y_training,x_testing,y_testing, estimator, rf):
     to find the optimal number of features (Best K).
 
     Parameters:
-    - X_train (pd.DataFrame): Training feature matrix.
-    - y_train (pd.Series): Training target vector.
-    - X_val (pd.DataFrame): Validation feature matrix.
-    - y_val (pd.Series): Validation target vector.
+    - X_training (pd.DataFrame): Training feature matrix.
+    - y_training (pd.Series): Training target vector.
+    - X_testing (pd.DataFrame): testing feature matrix.
+    - y_testing (pd.Series): Testing target vector.
     - estimator (object): The model used to validate the subset performance (e.g., SVC).
-    - rf_model (object): The Tree-based model used to calculate feature importance (e.g., RandomForest).
+    - rf_model (object): The Tree-based model used to calculate feature gini importance (e.g., RandomForest).
 
     Returns:
     - gini_df (pd.DataFrame): Dataframe containing features sorted by importance.
