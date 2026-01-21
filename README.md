@@ -1,4 +1,4 @@
-# Multi-Class Classification of Liver Cirrhosis Stages: *An evaluation of Machine Learning algorithms for the staging of Primary Biliary Cholangitis*
+# Multi-Class Classification of Liver Cirrhosis Stages: *An Evaluation of Random Forest, SVM, and Logistic Regression for the staging of Primary Biliary Cholangitis*
 
 ---
 
@@ -15,7 +15,7 @@
 [![Model](https://img.shields.io/badge/Model-Logistic_Regression-2ea44f)]()
 <br>
 
-<img width="517" height="352" alt="logo-project" src="https://github.com/user-attachments/assets/3e9f5cc8-6ece-47b0-af94-1ebe85818c94" />
+<img width="1534" height="601" alt="project-logo" src="https://github.com/user-attachments/assets/7225d649-401c-47fd-a999-74bc2279aafd" />
 
 
 
