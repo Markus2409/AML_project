@@ -25,7 +25,7 @@
 - [Repository Structure](#repository-structure)
 - [Software & Libraries](#software--libraries)
 - [Methodological Pipeline](#methodological-pipeline)
-- [Key Results](#key-results)
+- [Key Results](###5.key-results)
 - [References](#references)
 - [Contacts](#contacts)
 
