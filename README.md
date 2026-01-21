@@ -1,4 +1,4 @@
-# Multi-Class Classification of Liver Cirrhosis Stages – *An evaluation of Machine Learning algorithms for the staging of Primary Biliary Cholangitis*
+# Multi-Class Classification of Liver Cirrhosis Stages: *An evaluation of Machine Learning algorithms for the staging of Primary Biliary Cholangitis*
 
 ---
 
@@ -74,6 +74,7 @@ The project relies on the following scientific libraries:<br><br>
 | **Scikit-optimize** | Sequential model-based optimization using **Bayesian Optimization** (`BayesSearchCV`) for hyperparameter tuning. | [Head 2018](#ref-skopt) |
 | **Pandas / NumPy** | Efficient data manipulation, vector operations, and handling of clinical dataframe structures. | [Reback 2020](#ref-pandas); [Harris 2020](#ref-numpy) |
 | **Matplotlib / Seaborn** | Statistical data visualization for EDA, correlation heatmaps, and confusion matrices. | [Hunter 2007](#ref-matplotlib); [Waskom 2021](#ref-seaborn) |
+> **Table 1:** All required packages can be installed easily via the command: `pip install -r codes/requirements.txt`
 
 <br>
 
