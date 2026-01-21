@@ -97,7 +97,8 @@ The protocol aggregated feature importance rankings across the 5 cross-validatio
 ### 4. Benchmark Testing and Result Analysis
 The three candidate architectures—**Logistic Regression**, **SVM (RBF Kernel)**, and **Balanced Random Forest**—underwent a fine-tuning phase using **Bayesian Optimization** (`BayesSearchCV`, 60 iterations) to maximize the **Matthews Correlation Coefficient (MCC)**.
 The final evaluation on the Benchmark Set focused on clinical safety, analyzing the **False Negative Rates (FNR)** per stage and performing a deep-dive error analysis on severe misclassifications. This included the profiling of outliers such as **Patient ID 275**, a cirrhotic subject misclassified as early-stage due to an atypical "pseudo-healthy" phenotype (normal Albumin levels and absence of Hepatomegaly).
-### 5. Key Results
+
+### 5. Key Results and Conclusions
 
 The following table presents the detailed performance metrics for each model on the independent **Benchmark Set**. The **Logistic Regression** achieved the highest overall MCC (**0.312**), balancing the trade-off between identifying early-stage patients and overall classification stability.
 
@@ -127,7 +128,6 @@ The following table presents the detailed performance metrics for each model on 
 * **Intermediate Stages:** SVM showed the most consistent behavior for the "grey area" stages (2 and 3), managing the feature overlap slightly better than the linear model.
 * **Severe Disease (Stage 4):** All models performed best on the terminal stage.
 
-<br>
 The study concludes that while the overall accuracy is constrained by the limited sample size and the significant biological overlap between intermediate stages (2 and 3), the **Logistic Regression** and **SVM** models proved to be the most capable of generalizing across the disease spectrum.
 Specifically, **Logistic Regression** excelled in recognizing the **extreme stages** of the disease (1 and 4). However, its high sensitivity for Stage 1 must be interpreted with caution due to the extremely limited sample size of this subgroup ($N=16$). Conversely, the **SVM** demonstrated greater consistency in classifying **mid-stage** and Stage 4 patients, whereas it struggled to detect early-stage cases.
 Notably, all models successfully minimized **severe misclassification errors** (confusing Stage 1 with Stage 4), ensuring a baseline of clinical safety, with the exception of the single atypical outlier identified in the analysis.
