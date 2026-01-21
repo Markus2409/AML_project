@@ -15,7 +15,7 @@
 [![Model](https://img.shields.io/badge/Model-Logistic_Regression-2ea44f)]()
 <br>
 
-<img width="517" height="352" alt="ChatGPT Image 21 gen 2026, 13_36_19" src="https://github.com/user-attachments/assets/ce5f76bb-cb74-4ac2-883c-f59a8223a8cd" />
+<img width="517" height="352" alt="logo-project" src="https://github.com/user-attachments/assets/3e9f5cc8-6ece-47b0-af94-1ebe85818c94" />
 
 
 
