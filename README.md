@@ -128,7 +128,10 @@ The following table presents the detailed performance metrics for each model on 
 * **Severe Disease (Stage 4):** All models performed best on the terminal stage.
 
 <br>
-The study concludes that while classical ML models struggle with intermediate "grey area" stages due to feature overlap, Logistic Regression provides the safest baseline for stratifying extreme stages of the disease.>
+The study concludes that while the overall accuracy is constrained by the limited sample size and the significant biological overlap between intermediate stages (2 and 3), the **Logistic Regression** and **SVM** models proved to be the most capable of generalizing across the disease spectrum.
+Specifically, **Logistic Regression** excelled in recognizing the **extreme stages** of the disease (1 and 4). However, its high sensitivity for Stage 1 must be interpreted with caution due to the extremely limited sample size of this subgroup ($N=16$). Conversely, the **SVM** demonstrated greater consistency in classifying **mid-stage** and Stage 4 patients, whereas it struggled to detect early-stage cases.
+Notably, all models successfully minimized **severe misclassification errors** (confusing Stage 1 with Stage 4), ensuring a baseline of clinical safety, with the exception of the single atypical outlier identified in the analysis.
+The general inability to reliably distinguish intermediate stages and the impact of atypical outliers indicate that classical ML approaches may have reached a **performance ceiling** on this dataset. Future iterations could benefit from **Deep Learning** techniques or the inclusion of additional histological features to capture non-linear nuances that current biomarkers fail to represent.
 
 ---
 
