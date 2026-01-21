@@ -125,7 +125,7 @@ The following table presents the detailed performance metrics for each model on 
 
 * **Stage 1 Detection:** Logistic Regression significantly outperformed other models in detecting early-stage disease (Recall **67%** vs 33%), making it the most suitable candidate for screening purposes where minimizing False Negatives is crucial.
 * **Intermediate Stages:** SVM showed the most consistent behavior for the "grey area" stages (2 and 3), managing the feature overlap slightly better than the linear model.
-* **Severe Disease (Stage 4):** All models performed best on the terminal stage (Precision/Recall $\approx$ 68-71%).
+* **Severe Disease (Stage 4):** All models performed best on the terminal stage.
 
 <br>
 The study concludes that while classical ML models struggle with intermediate "grey area" stages due to feature overlap, Logistic Regression provides the safest baseline for stratifying extreme stages of the disease.>
