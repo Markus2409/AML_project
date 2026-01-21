@@ -18,3 +18,27 @@ This repository contains the implementation of a Machine Learning pipeline desig
 Utilizing the **Cirrhosis Prediction Dataset** (sourced from Kaggle and originating from the Mayo Clinic's longitudinal study), this project addresses real-world data complexities, including severe class imbalance and missing clinical values. To ensure reliability, a rigorous **Stability Selection** protocol was implemented to identify a robust subset of predictive biomarkers. Three distinct supervised learning architectures—**Logistic Regression**, **Support Vector Machines (SVM)**, and **Balanced Random Forest**—were then trained, optimized, and compared to evaluate their efficacy in stratifying patients across the four disease stages.
 
 This project was developed as part of the **Applied Machine Learning** course assignment during my **MSc in Bioinformatics** (at **University of Bologna**), with the goal of integrating rigorous data preprocessing, feature selection stability, and comparative model evaluation in a clinical context.
+
+## Dependencies
+
+The project is implemented in **Python 3** and utilizes the following scientific libraries to ensure reproducibility and robust analysis:
+
+* **Pandas & NumPy**
+  Fundamental libraries for efficient data manipulation and numerical computation. In this project, they are utilized to manage the clinical dataframe structure, handle missing values, and perform vector operations required for the manual implementation of stability selection.
+
+* **Scikit-learn**
+  The comprehensive machine learning toolkit that powers the core pipeline. It provides the necessary modules for data preprocessing (StandardScaler, LabelEncoder), imputation (KNNImputer), model training (Logistic Regression, SVM), and validation metrics (MCC, F1-Score).
+
+* **Imbalanced-learn**
+  A specialized library designed to address datasets with severe class skew. It is specifically employed here to implement the **Balanced Random Forest** classifier, which utilizes undersampling techniques within the ensemble generation to prevent bias towards majority stages.
+
+* **Scikit-optimize**
+  A library for sequential model-based optimization. It is used to perform **Bayesian Optimization** (`BayesSearchCV`), allowing for an intelligent and efficient exploration of hyperparameter spaces compared to traditional exhaustive grid search methods.
+
+* **Matplotlib & Seaborn**
+  Primary libraries for statistical data visualization. They are essential for the Exploratory Data Analysis (EDA) phase to visualize feature distributions and for generating the final interpretative plots, including confusion matrices and correlation heatmaps.
+
+To replicate the environment, all dependencies can be installed via the provided requirements file:
+
+```bash
+pip install -r requirements.txt
